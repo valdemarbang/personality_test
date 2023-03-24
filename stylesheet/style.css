@@ -1,0 +1,67 @@
+/* font imports */
+@import url('https://fonts.cdnfonts.com/css/corethan');
+
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: linear-gradient(to bottom, #370509, #5f2c50, #64629b, #359ed5, #12d9eb);
+  text-align: center;
+  color: #fff;
+  overflow: hidden; /* Hide scrollbars */
+}
+
+h1 {
+  font-family: 'Corethan', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 3em;
+}
+
+#text {
+  font-family: 'Corethan', sans-serif;
+  margin: 0 auto;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.button {
+  width: 40%; 
+  font-size: 1.3em;
+  font-family: 'Corethan', sans-serif;
+  border: 5px solid #fff;
+  margin: 0.2em;
+  padding: 0.2em;
+  display: inline-block;
+  background-color: transparent;
+  text-transform: uppercase;
+  padding: 1px;
+  color: #fff;
+  
+}
+
+#progress-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+#progress {
+  width: 20%;
+  text-align: right;
+  border-bottom: 2px solid cyan;
+  margin-bottom: -2px;
+}
+
+.hidden {
+  display: none;
+}

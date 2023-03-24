@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="stylesheet" href="range-slider/css/rSlider.min.css">
+</head>
+
+<body>
+    <h1>Nanny Scale</h1>
+    <!-- Start page -->
+    <div class="container start">
+        <div id="text">
+            The mystical Nanny creature was born in the deep woods of Dalarna with the boiling blood of balkans running
+            in her veins she grow to be one of the most special beings ever to live.
+            Here is an attempt to capture the true essence of Nanny.
+            <p>Please answer each statement/question with 1(strongly disagree) - 5(strongly agree). </p>
+        </div>
+        <div button id="button" class="button" onclick="showPage(1); setupQuestion();">
+            <p>Start Test</p>
+        </div>
+    </div>
+
+    <!-- The test -->
+    <div class="container hidden">
+        <div id="progress-bar">
+            <div id="progress">1/5</div>
+        </div>
+        <div id="text">1(strongly disagree) - 5(strongly agree)</div>
+        <input type="text" id="slider" class="slider" />
+        <div button id="button" class="button" onclick="setupQuestion();">
+            <p>Next question</p>
+        </div>
+    </div>
+
+    <!-- Result end page -->
+    <div class="container hidden">
+        <div class="result">
+            <h1>Result:</h1>
+            <p id="result"></p>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="javascript/main.js"></script>
+    <script src="range-slider/js/rSlider.min.js"></script>
+</body>
+
+</html>
