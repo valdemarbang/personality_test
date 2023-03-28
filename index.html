@@ -16,7 +16,7 @@
             Here is an attempt to capture the true essence of Nanny.
             <p>Please answer each statement/question with 1(strongly disagree) - 5(strongly agree). </p>
         </div>
-        <div button id="button" class="button" onclick="showPage(1); setupQuestion();">
+        <div button id="button" class="button" onclick="showPage(1); initSlider(); setupStatement();">
             <p>Start Test</p>
         </div>
     </div>
@@ -26,9 +26,10 @@
         <div id="progress-bar">
             <div id="progress">1/5</div>
         </div>
+        <h2 id="statement"></h2>
         <div id="text">1(strongly disagree) - 5(strongly agree)</div>
-        <input type="text" id="slider" class="slider" />
-        <div button id="button" class="button" onclick="setupQuestion();">
+        <input type="text" id="slider" class="slider" init />
+        <div button id="button" class="button" onclick="nextStatement();">
             <p>Next question</p>
         </div>
     </div>
@@ -40,10 +41,6 @@
             <p id="result"></p>
         </div>
     </div>
-
-
-
-
 
     <script src="javascript/main.js"></script>
     <script src="range-slider/js/rSlider.min.js"></script>
