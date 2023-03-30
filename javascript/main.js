@@ -1,7 +1,10 @@
 /* Global variables */
 var currStatement = 0;
 let score = 0;
-var slider;
+let bubbleSelected = -1;
+//let bubbles = document.querySelectorAll('bubble');
+var bubbles = document.getElementsByClassName("bubble");
+
 
 /* Statements */
 const statements = [
@@ -33,34 +36,43 @@ const results = [
     "90-99% = You are a little bit Nanny",
     "100%= Wow, congratulations you are 100% Nanny. You probably life life to the fullest and are surrounded by the most incredible people in the world."
 ]
-function initSlider () {
-    // Set up the slider
-    slider = new rSlider({
-        target: '#slider',
-        values: [1, 2, 3, 4, 5],
-        range: false,
-        set: [3],
-        tooltip: false,
-    });
-}
 function setupStatement() {
     //  Set up the progress bar
     var progress = 9 + currStatement * 9;
     var progressbar = document.getElementById("progress");
     progressbar.style.width = progress + "%";
-    progressbar.innerText = currStatement + 1 + "/" + statements.length + "  " + score;
+    progressbar.innerText = "score: " + score
 
     // Set up the current statement
     var statementText = document.getElementById("statement");
     statementText.innerText = statements[currStatement];
 }
 
+function toggleCheckmark(selectedBubble) {
+    if (bubbleSelected == -1) {
+        selectedBubble.classList.toggle("selected");
+    }
+    else {
+        bubbles[bubbleSelected].classList.remove("selected");
+        selectedBubble.classList.toggle("selected");
+    }
+    bubbleSelected = selectedBubble.id;
+}
+
 function nextStatement() {
+    // Check if a bubble is selected
+    if (bubbleSelected === -1) {
+        alert("Please select a bubble");
+        return;
+    }
+
     // Is this the last statement?
     if (currStatement < statements.length - 1) {
         currStatement++;
-        score += Number(slider.getValue()) - 1;
-        slider.setValues([5]);
+        score += Number(bubbleSelected);
+        alert(bubbleSelected);
+        bubbles[bubbleSelected].classList.remove("selected");
+        bubbleSelected = -1;
         setupStatement();
     } else {
         completeTest();

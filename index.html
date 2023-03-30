@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
     <link rel="stylesheet" href="stylesheet/style.css">
-    <link rel="stylesheet" href="range-slider/css/rSlider.min.css">
 </head>
 
 <body>
@@ -16,21 +16,29 @@
             Here is an attempt to capture the true essence of Nanny.
             <p>Please answer each statement/question with 1(strongly disagree) - 5(strongly agree). </p>
         </div>
-        <div button id="button" class="button" onclick="showPage(1); initSlider(); setupStatement();">
+        <div button id="button" class="button" onclick="showPage(1); setupStatement();">
             <p>Start Test</p>
         </div>
     </div>
 
     <!-- The test -->
     <div class="container hidden">
-        <div id="progress-bar">
-            <div id="progress">1/5</div>
-        </div>
         <h2 id="statement"></h2>
-        <div id="text">1(strongly disagree) - 5(strongly agree)</div>
-        <input type="text" id="slider" class="slider" init />
+        
+        <div class="bubble" style="--size: 60px; --border-color: red" onclick="toggleCheckmark(this)"></div>
+        <div class="bubble" style="--size: 45px; --border-color: red" onclick="toggleCheckmark(this)"></div>
+        <div class="bubble" style="--size: 40px; --border-color: white" onclick="toggleCheckmark(this)"></div>
+        <div class="bubble" style="--size: 45px; --border-color: green" onclick="toggleCheckmark(this)"></div>
+        <div class="bubble" style="--size: 60px; --border-color: green" onclick="toggleCheckmark(this)"></div>
+        
+        <text id="text-disagree">DISAGREE</text>
+        <text id="text-agree">AGREE</text>
+
         <div button id="button" class="button" onclick="nextStatement();">
             <p>Next question</p>
+        </div>
+        <div class="navbar">
+            <div id="progress"></div>
         </div>
     </div>
 
@@ -43,7 +51,6 @@
     </div>
 
     <script src="javascript/main.js"></script>
-    <script src="range-slider/js/rSlider.min.js"></script>
 </body>
 
 </html>
