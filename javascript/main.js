@@ -1,10 +1,7 @@
 /* Global variables */
 var currStatement = 0;
 let score = 0;
-let bubbleSelected = -1;
-//let bubbles = document.querySelectorAll('bubble');
-var bubbles = document.getElementsByClassName("bubble");
-
+let selectedBubble = null;
 
 /* Statements */
 const statements = [
@@ -48,20 +45,28 @@ function setupStatement() {
     statementText.innerText = statements[currStatement];
 }
 
-function toggleCheckmark(selectedBubble) {
-    if (bubbleSelected == -1) {
-        selectedBubble.classList.toggle("selected");
+function toggleCheckmark(indexBubble) {
+    var bubbles = document.getElementsByClassName("bubble");
+    if(selectedBubble !== null) {
+        // Reset the previous selected bubble
+        bubbles[selectedBubble].classList.toggle("selected");
+        bubbles[selectedBubble].style.backgroundColor = "transparent";
+        // If the same bubble is selected, unselect it
+        if(selectedBubble === indexBubble) {
+            selectedBubble = null;
+            return;
+        }
     }
-    else {
-        bubbles[bubbleSelected].classList.remove("selected");
-        selectedBubble.classList.toggle("selected");
-    }
-    bubbleSelected = selectedBubble.id;
+    // Select the new bubble
+    bubbles[indexBubble].classList.toggle("selected");
+    var style = getComputedStyle(bubbles[indexBubble]);
+    bubbles[indexBubble].style.backgroundColor = style.getPropertyValue("--border-color");
+    selectedBubble = indexBubble;
 }
 
 function nextStatement() {
     // Check if a bubble is selected
-    if (bubbleSelected === -1) {
+    if (selectedBubble === null) {
         alert("Please select a bubble");
         return;
     }
@@ -69,10 +74,9 @@ function nextStatement() {
     // Is this the last statement?
     if (currStatement < statements.length - 1) {
         currStatement++;
-        score += Number(bubbleSelected);
-        alert(bubbleSelected);
-        bubbles[bubbleSelected].classList.remove("selected");
-        bubbleSelected = -1;
+        score += selectedBubble;
+        // Reset the selected bubble
+        toggleCheckmark(selectedBubble);
         setupStatement();
     } else {
         completeTest();
@@ -81,7 +85,6 @@ function nextStatement() {
 }
 
 function completeTest() {
-    // Max score else we get a resultIndex of 10
     let resultIndex;
     resultIndex = Math.floor(score / ((statements.length - 1) * 4) * 10);
     var result = document.getElementById("result");
