@@ -33,12 +33,18 @@ const results = [
     "90-99% = You are a little bit Nanny",
     "100%= Wow, congratulations you are 100% Nanny. You probably life life to the fullest and are surrounded by the most incredible people in the world."
 ]
+
+/* Functions */
 function setupStatement() {
     //  Set up the progress bar
-    var progress = 9 + currStatement * 9;
-    var progressbar = document.getElementById("progress");
-    progressbar.style.width = progress + "%";
-    progressbar.innerText = "score: " + score
+    const fill = document.querySelector('.fill');
+    const percent = document.querySelector('.percent');
+    
+    const percentage = Math.floor((currStatement / statements.length) * 100);
+    
+    fill.style.width = percentage + '%';
+    percent.textContent = percentage + '%';
+    fill.style.backgroundColor = 'green';
 
     // Set up the current statement
     var statementText = document.getElementById("statement");
