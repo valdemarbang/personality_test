@@ -26,7 +26,7 @@ h1 {
 #text {
   font-family: "Open Sans","Helvetica Neue",Arial;
   margin: 0 auto;
-  font-size: 3.5vh;
+  font-size: 3vh;
   letter-spacing: 2px;
   text-align: center;
   color:  white;
@@ -59,7 +59,7 @@ h1 {
 #statement {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   display: block;
-  font-size: 5vh;
+  font-size: 4vh;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin-inline-end: 0px;
@@ -155,7 +155,7 @@ h1 {
 #result {
   font-family: "Open Sans","Helvetica Neue",Arial;
   margin: 0 auto;
-  font-size: 1.3em;
+  font-size: 3vh;
   letter-spacing: 2px;
   text-align: center;
   color:  white;
