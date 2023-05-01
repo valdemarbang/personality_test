@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <title>Nanny Scale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
@@ -14,8 +15,10 @@
             The mystical Nanny creature was born in the deep woods of Dalarna with the boiling blood of balkans running
             in her veins she grow to be one of the most special beings ever to live.
             Here is an attempt to capture the true essence of Nanny.
-            <p>Please answer each statement/question with 1(strongly disagree) - 5(strongly agree). </p>
         </div>
+        <div id="text" style="position: fixed; bottom: 20%; font-size: 1.0em;">Please answer each statement/question
+            <br>1(strongly disagree) - 5(strongly agree)</br>
+        </div> 
         <div button id="button" class="button" onclick="showPage(1); setupStatement();">
             <p>Start Test</p>
         </div>
@@ -23,7 +26,7 @@
 
     <!-- The test -->
     <div class="container hidden">
-        <h2 id="statement"></h2>
+        <div id="statement"></div>
         
         <div class="bubbles">  
             <div class="bubble" style="--size: 60px; --border-color: red" onclick="toggleCheckmark(0)"></div>
@@ -51,7 +54,7 @@
     <!-- Result end page -->
     <div class="container hidden">
         <div class="result">
-            <h1>Result:</h1>
+            <h1 id="result_percentage">Result: </h1>
             <p id="result"></p>
         </div>
     </div>

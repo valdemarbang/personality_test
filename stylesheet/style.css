@@ -5,14 +5,13 @@ html {
 body {
   height: 100%;
   margin: 0;
+  background: url(../img/nanny_ai.png), black;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  /*background-image: linear-gradient(to bottom, #370509, #5f2c50, #64629b, #359ed5, #12d9eb);*/
-  background-color: white;
+  background-position: 35% 100%;
+  background-size: 200%; 
   text-align: center;
-  color: #fff;
   overflow: hidden; /* Hide scrollbars */
-  color:  #51596a;
+  color:  white;
 }
 
 h1 {
@@ -20,37 +19,52 @@ h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 3em;
-  color:  #51596a;
+  color:  #84fffe;
+  /*text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;*/
 }
 
 #text {
   font-family: "Open Sans","Helvetica Neue",Arial;
   margin: 0 auto;
-  font-size: 1.1em;
+  font-size: 1.3em;
   letter-spacing: 2px;
   text-align: center;
-  color:  #51596a;
+  color:  white;
+  width: 100%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 #text-agree {
   font-family: "Open Sans","Helvetica Neue",Arial;
   font-size: 15px;
   letter-spacing: 2px;
-  float: right;
+  position: fixed;
+  right: 10%;
   display: inline-block;
   color: green;
-  right: 10px;
 }
 
 #text-disagree {
   font-family: "Open Sans","Helvetica Neue",Arial;
   font-size: 15px;
   letter-spacing: 2px;
-  float: left;
+  position: fixed;
+  left: 10%;
   display: inline-block;
   color: red;
-  left: 10px;
 }
+
+#statement {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-end: 0px;
+  margin-inline-start: 0px;
+  font-weight: bold;
+}
+
 .bubble {
   display: inline-block;
   height: var(--size);
@@ -83,13 +97,15 @@ h1 {
   margin: 0.2em;
   padding: 0.2em;
   display: inline-block;
-  border-color: #51596a;
+  border-color: white;
   text-transform: uppercase;
   padding: 1px;
-  color:  #51596a;
+  color:  white;
   border-radius: 5px;
-  down: 100px;
-  right: 1000px;
+  position: fixed;
+  left: 50%;
+  bottom: 8%;
+  margin-left: -35%;
 }
 
 .navbar {
@@ -98,7 +114,6 @@ h1 {
   left: 0;
   width: 100%;
   height: 30px;
-  background-color: #51596a;;
   color: white;
   font-size: 24px;
   display: flex;
@@ -133,6 +148,16 @@ h1 {
   font-size: 15px;
 }
 
+#result {
+  font-family: "Open Sans","Helvetica Neue",Arial;
+  margin: 0 auto;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  text-align: center;
+  color:  white;
+  width: 100%;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
 .hidden {
   display: none;

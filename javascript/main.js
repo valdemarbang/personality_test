@@ -11,28 +11,30 @@ const statements = [
     "I love fika more than i love life.",
     "I'm not ashamed of anything, and if I am I'm not.",
     "My money is best spend on new wood work tools, no matter the price.",
-    "If something is free I am taking more than is socially acceptable.",
+    "If something (fika) is free I am taking more than is socially acceptable.",
     "Your partner is EXTREMELY handsome, smart, generous and kind. Most likely one of the best people ever to live.",
     "You are surrounded by incredible people from all around the world who loves you.",
     "I am a overly loving, kindhearted creative genius with more karma than I can spend that.",
     "I can sleep anywhere, and anytime in any position.",
-    "It is supposed to be more butter than bread on a sandwich."
+    "It is supposed to be more butter than bread on a sandwich.",
+    "I like to build things",
+    "Green IS the best color"
 ];
 
 /* Results */
 const results = [
-    "0-10% = Oh, no. You are less than 10% Nanny",
-    "10-20% = You are a little bit Nanny",
-    "20-30% = You are a little bit Nanny",
-    "30-40% = You are a little bit Nanny",
-    "40-50% = You are a little bit Nanny",
-    "50-60% = You are a little bit Nanny",
-    "60-70% = You are a little bit Nanny",
-    "70-80% = You are a little bit Nanny",
-    "80-90% = You are a little bit Nanny",
-    "90-99% = You are a little bit Nanny",
-    "100%= Wow, congratulations you are 100% Nanny. You probably life life to the fullest and are surrounded by the most incredible people in the world."
-]
+    "0-10% = You are nothing like Nanny.",
+    "10-20% = You share a few traits with Nanny, but not much.",
+    "20-30% = You have some similarities with Nanny, but there's room for improvement.",
+    "30-40% = You're a bit like Nanny, but there's still work to be done.",
+    "40-50% = You're somewhat similar to Nanny.",
+    "50-60% = You share a fair amount of traits with Nanny.",
+    "60-70% = You have a lot in common with Nanny.",
+    "70-80% = You're very much like Nanny.",
+    "80-90% = You're almost like Nanny, just a few things to work on.",
+    "90-99% = You're very close to being like Nanny.",
+    "100% = Wow, congratulations you are 100% Nanny. You probably life life to the fullest and are surrounded by the most incredible people."
+];
 
 /* Functions */
 function setupStatement() {
@@ -91,10 +93,11 @@ function nextStatement() {
 }
 
 function completeTest() {
-    let resultIndex;
-    resultIndex = Math.floor(score / ((statements.length - 1) * 4) * 10);
+    let resultScore = (score / ((statements.length - 1) * 4));
     var result = document.getElementById("result");
-    result.innerText = results[resultIndex];
+    var result_percentage = document.getElementById("result_percentage");
+    result_percentage.innerText += Math.floor(resultScore * 100) + "%";
+    result.innerText = results[Math.floor(resultScore * 10)];
 }
 
 // bring the particular page into view.
