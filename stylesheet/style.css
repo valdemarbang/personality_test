@@ -26,7 +26,7 @@ h1 {
 #text {
   font-family: "Open Sans","Helvetica Neue",Arial;
   margin: 0 auto;
-  font-size: 1.3em;
+  font-size: 1.5em;
   letter-spacing: 2px;
   text-align: center;
   color:  white;
@@ -59,7 +59,7 @@ h1 {
 #statement {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   display: block;
-  font-size: 1.5em;
+  font-size: 2.4em;
   margin-block-start: 0.83em;
   margin-block-end: 0.83em;
   margin-inline-end: 0px;

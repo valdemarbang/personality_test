@@ -75,7 +75,12 @@ function toggleCheckmark(indexBubble) {
 function nextStatement() {
     // Check if a bubble is selected
     if (selectedBubble === null) {
-        alert("Please select a bubble");
+        //alert("Please select a bubble");
+        Swal.fire({
+            title: 'Oops...',
+            text: 'Please answer the statement/question by pressing a bubble.',
+            confirmButtonColor: "#84fffe"
+          })
         return;
     }
 
