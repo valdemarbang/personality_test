@@ -39,9 +39,10 @@ h1 {
   font-size: 15px;
   letter-spacing: 2px;
   position: fixed;
-  right: 10%;
+  right: 5%;
   display: inline-block;
-  color: green;
+  color: #84fffe;
+  font-weight: bold;
 }
 
 #text-disagree {
@@ -49,9 +50,10 @@ h1 {
   font-size: 15px;
   letter-spacing: 2px;
   position: fixed;
-  left: 10%;
+  left: 5%;
   display: inline-block;
   color: red;
+  font-weight: bold;
 }
 
 #statement {
@@ -70,7 +72,7 @@ h1 {
   height: var(--size);
   width: var(--size);
   border-radius: 50%;
-  border: 2px solid var(--border-color);
+  border: 3.3px solid var(--border-color);
   position: relative;
   cursor: pointer;
 }
