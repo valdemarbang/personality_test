@@ -97,9 +97,10 @@ function nextStatement() {
     // Non selected and single question we pass the question with full points
     if (currStatement == 9 && selectedBubble == null) {
         selectedBubble = 4;
+        toggleCheckmark(selectedBubble); // good fix to not have to repeat code
     }
     // Check if a bubble is selected
-    else if (selectedBubble === null) {
+    if (selectedBubble === null) {
         //alert("Please select a bubble");
         Swal.fire({
             title: 'Oops...',
