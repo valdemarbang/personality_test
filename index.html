@@ -12,12 +12,14 @@
     <!-- Start page -->
     <div class="container start">
         <div id="text">
-            The mystical Nanny creature was born in the deep woods of Dalarna with the boiling blood of balkans running
-            in her veins she grow to be one of the most special beings ever to live.
-            Here is an attempt to capture the true essence of Nanny.
+            The mystical Nanny personality was first spotted in the deep woods of Dalarna. 
+            A young girl with the boiling blood of balkans running in her veins grew to be one of the most special beings ever to live. 
+            The Nanny personality has been linked to heightened health, longevity, social skills, high well-being, future fortunes and autism. 
         </div>
-        <div id="text" style="position: fixed; bottom: 19%; font-size: 4vw;">Please answer each statement/question
-            <br>1(strongly disagree) - 5(strongly agree)</br>
+        <div id="text" style="position: fixed; bottom: 12%; font-size: 3vw;">
+            Answer each of the following statements as truthfully as possible to receive your Nanny percentage.
+            <br>Please answer each statement with</br>
+            1 (strongly disagree) to 5 (strongly agree).
             <div button id="button" class="button" onclick="showPage(1); setupStatement();">
                 <p>Start Test</p>
             </div>
@@ -32,15 +34,15 @@
             <div class="bubble" style="--size: 65px; --border-color: red" onclick="toggleCheckmark(0)"></div>
             <div class="bubble" style="--size: 50px; --border-color: red" onclick="toggleCheckmark(1)"></div>
             <div class="bubble" style="--size: 45px; --border-color: grey" onclick="toggleCheckmark(2)"></div>
-            <div class="bubble" style="--size: 50px; --border-color: #84fffe" onclick="toggleCheckmark(3)"></div>
-            <div class="bubble" style="--size: 65px; --border-color: #84fffe" onclick="toggleCheckmark(4)"></div>
+            <div class="bubble" style="--size: 50px; --border-color: #75ffff" onclick="toggleCheckmark(3)"></div>
+            <div class="bubble" style="--size: 65px; --border-color: #75ffff" onclick="toggleCheckmark(4)"></div>
         </div>
         
         <text id="text-disagree">DISAGREE</text>
         <text id="text-agree">AGREE</text>
 
-        <div button id="button" class="button" onclick="nextStatement();">
-            <p>Next question</p>
+        <div button id="button" class="button" style="bottom: 6%;" onclick="nextStatement();">
+            <p id="button-text">Next question</p>
         </div>
 
         <div class="navbar">
