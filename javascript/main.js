@@ -25,7 +25,7 @@ const statements = [
 /* Results */
 const results = [
     "0-10% = Oh no! You are less than 10% Nanny. You should probably eat some more fish, travel to an Indian wedding and make new awesome friends at this party!",
-    "10-20% =That's a low Nanny percentage… You should eat some more butter, buy an expensive screwdriver and make some new awesome friends at this party!",
+    "10-20% = That's a low Nanny percentage… You should eat some more butter, buy an expensive screwdriver and make some new awesome friends at this party!",
     "20-30% = There is still time! Make some new wonderful friends at this party, take an extra large portion of cake and fall asleep in the toilet to increase your Nannyness.",
     "30-40% = Only one third Nanny in you! Unless you want do die young and broke you should really take some extra cake and make some new wonderful friends at this party",
     "40-50% = There is some Nannyness in you! There could be more… take that extra piece of cake and scream at someone for telling you to calm down!",
@@ -33,7 +33,7 @@ const results = [
     "60-70% = Wow! Two thirds Nanny! You could go on and make president of the woodworkers united one day! Keep it going!",
     "70-80% = You're almost a Nanny by default! People must really love you! Stay unhinged and sexy!",
     "80-90% = Wow! That's a high percentage! Keep spreading that butter! You will live a long and happy life (maybe buy some more drills and allen keys just to be on the safe side)",
-    "90-99% =Congratulations, you are part of the top 10% of Nanny! One could almost believe that you are the actual Nanny! You probably live a wonderful life working as a traveling carpenter eating enormous amounts of fika each day.",
+    "90-99% = Congratulations, you are part of the top 10% of Nanny! One could almost believe that you are the actual Nanny! You probably live a wonderful life working as a traveling carpenter eating enormous amounts of fika each day.",
     "100% = Wow! Congratulations you are 100% Nanny! You probably live life to the fullest and are surrounded by the most incredible people! Keep doing what you are doing!"
 ];
 
@@ -94,13 +94,8 @@ function toggleCheckmark(indexBubble) {
 }
 
 function nextStatement() {
-    // Non selected and single question we pass the question with full points
-    if (currStatement == 9 && selectedBubble == null) {
-        selectedBubble = 4;
-        toggleCheckmark(selectedBubble); // good fix to not have to repeat code
-    }
     // Check if a bubble is selected
-    if (selectedBubble === null) {
+    if (selectedBubble === null && currStatement != 9) {
         //alert("Please select a bubble");
         Swal.fire({
             title: 'Oops...',
@@ -109,11 +104,18 @@ function nextStatement() {
         })
         return;
     }
+    // Single question
+    if(selectedBubble === null && currStatement == 9) {
+        currStatement++;
+        score += 4;
+        setupStatement();
+        return;
+    }
 
+    score += selectedBubble;
     // Is this the last statement?
     if (currStatement < statements.length - 1) {
         currStatement++;
-        score += selectedBubble;
         // Reset the selected bubble
         toggleCheckmark(selectedBubble);
         setupStatement();
@@ -124,7 +126,7 @@ function nextStatement() {
 }
 
 function completeTest() {
-    let resultScore = (score / ((statements.length - 1) * 4));
+    let resultScore = (score / (statements.length * 4));
     var result = document.getElementById("result");
     var result_percentage = document.getElementById("result_percentage");
     result_percentage.innerText += Math.floor(resultScore * 100) + "%";
